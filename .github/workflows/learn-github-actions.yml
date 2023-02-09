@@ -5,12 +5,16 @@ jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - run: echo "🐧 Esse job está rodando em um servidor ${{ runner.os }} hospedado no GitHub!"
+      - name: Checkout do respositório
+        uses: actions/checkout@v3
       - name: Setup Node.js environment
         uses: actions/setup-node@v3
         with:
           node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
+      - name: Instalando o bats e verificando a versão
+        run: |
+         npm install -g bats
+         bats -v
       - name: Status do Job
-        run: echo "This job's status is ${{ job.status }}."
+        run: echo "🍏 This job's status is ${{ job.status }}."
