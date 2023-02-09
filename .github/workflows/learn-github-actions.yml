@@ -16,5 +16,5 @@ jobs:
         run: |
          npm install -g bats
          bats -v
-      - name: Status do Job
-        run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: 🍏 Status do Job
+        run: echo "This job's status is ${{ job.status }}."
